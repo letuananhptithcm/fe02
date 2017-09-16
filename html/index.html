@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Front End</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu-mobile");
+            if (menu.className == "menu menu-mobile") {
+                menu.className += " responsive";
+            } else {
+                menu.className = "menu menu-mobile";
+            }
+        }
+    </script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-3.2.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/index.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <a href="#">
+                <img class="logo" src="../img/logo-final.png">
+            </a>
+            <div class="menu menu-desktop" id="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">Car News</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">Review</a></li>
+                    <li class="have-sub-menu">
+                        <a href="#">More</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Test</a></li>
+                            <li><a href="#">Line</a></li>
+                            <li><a href="#">Tunning</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu menu-mobile" id="menu-mobile">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">Car News</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">Review</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Line</a></li>
+                    <li><a href="#">Tunning</a></li>
+                </ul>
+            </div>
+            <div class="icon"><a href="javascript:void(0);" onclick="toggleMenu();">&#9776;</a></div>
+            <div class="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="container">
+        <div class="slider">
+            <img src="../img/82-1021x580.jpg">
+            <p class="caption">This is slider image caption</p>
+            <i onclick="slide();" class="fa fa-chevron-right" aria-hidden="true"></i>
+            <i onclick="slide();" class="fa fa-chevron-left" aria-hidden="true"></i>
+        </div>
+
+        <script>
+            function slide() {
+                console.log("Action");
+            }
+        </script>
+
+        <div class="content">
+            <div class="content-header">
+                <span class="label">Trending now</span>
+                <span class="title">This is web slogan !!!</span>
+                <button class="control right">></button>
+                <button class="control left"><</button>
+            </div>
+
+            <div class="list" id="list">
+                <!-- <div class="item first">
+                    <div class="image">
+                        <a onClick="addToCart('abc')">
+                        <img src="../img/19-300x160.jpg">
+                    </a>
+
+                    </div>
+                    <div class="text">The title</div>
+                    <p class="author">John Doe <span>July 29th 2017</span></p>
+                </div>
+
+                <div class="item">
+                    <div class="image">
+                        <a onClick="addToCart('abc')">
+                            <img src="../img/19-300x160.jpg">
+                        </a>
+
+                    </div>
+                    <div class="text">The title</div>
+                    <p class="author">John Doe <span>July 29th 2017</span></p>
+                </div> -->
+            </div>
+
+            <div id="last">
+
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="content-footer">
+                <div class="paging">
+                    <button class="button">1</button>
+                    <button class="button">2</button>
+                    <button class="button">3</button>
+                    <button class="button">...</button>
+                    <button class="button">10</button>
+                    <button class="button">></button>
+                    <div class="paging-text">Page 1 of 10</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="container footer">
+        <div class="content">
+            <div class="social">
+                <div>
+                    <a href="#">
+                        <img src="../img/logo-footer.png">
+                    </a>
+                </div>
+                <p>
+                    Newsmag is your news, entertainment, music fashion website. We provide you with the latest breaking news and videos straight
+                    from the entertainment industry.
+                </p>
+                <p class="contact-email">
+                    Contact us: <a href="mailto:contact@yoursite.co">contact@yoursite.co</a>
+                </p>
+                <div class="social-icons">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="news">
+                <div class="label-container">
+                    <span class=label>Even more news</span>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="../img/88-100x75.jpg">
+                    </div>
+                    <div class="text">
+                        <p>BFGoodrich Unveils G-Force Tires</p>
+                        <p>May 10, 2017</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="item">
+                    <div class="image">
+                        <img src="../img/88-100x75.jpg">
+                    </div>
+                    <div class="text">
+                        <p>BFGoodrich Unveils G-Force Tires</p>
+                        <p>May 10, 2017</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="item">
+                    <div class="image">
+                        <img src="../img/88-100x75.jpg">
+                    </div>
+                    <div class="text">
+                        <p>BFGoodrich Unveils G-Force Tires</p>
+                        <p>May 10, 2017</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="category">
+                <div class="label-container">
+                    <span class=label>Popular category</span>
+                </div>
+                <!-- <div class="category-content">
+                    <p>Future Cars <span class="count">8</span></p>
+                    <p>Future Cars <span class="count">8</span></p>
+                    <p>Future Cars <span class="count">8</span></p>
+                    <p>Future Cars <span class="count">8</span></p>
+                    <p>Future Cars <span class="count">8</span></p>
+                    <p>Future Cars <span class="count">8</span></p>
+                </div> -->
+                <ul>
+                    <li>Future Cars <span class="count">8</span></li>
+                    <li>Future Cars <span class="count">8</span></li>
+                    <li>Future Cars <span class="count">8</span></li>
+                    <li>Future Cars <span class="count">8</span></li>
+                    <li>Future Cars <span class="count">8</span></li>
+                    <li>Future Cars <span class="count">8</span></li>
+                </ul>
+                <style>
+
+                </style>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+    <!-- <audio autoplay>
+            <source src="../audio/Close-Your-Eyes-Stacey-Kent.mp3" type="audio/mp3"> </audio> -->
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-6">
+
+                    </div>
+                    <div class="col-lg-6">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+        </div>
+    </div> -->
+</body>
+
+<!-- <script type="text/javascript" src="../js/script.js"></script> -->
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Front End</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu-mobile");
+            if (menu.className == "menu menu-mobile") {
+                menu.className += " responsive";
+            } else {
+                menu.className = "menu menu-mobile";
+            }
+        }
+    </script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-3.2.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="../js/index.js"></script> -->
+</head>
+
+<body>
+    <p>Detail code: <span id="detailCode"></span></p>
+    <p>Ajax information:</p>
+    <div id="ajax-information"></div>
+
+    <script>
+        $(document).ready(function () {
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var detailCode = url.searchParams.get("code");
+            $('#detailCode').html(detailCode);
+            console.log(url.searchParams.get('title'));
+
+            $.ajax({
+                url: 'https://api.myjson.com/bins/' + detailCode,
+                method: "GET",
+                success: function (data) {
+                    var html = "<p>Title: " + data.title + "</p><p>Description: " + data.description + "</p>";
+                    $('#ajax-information').html(html);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+</body>
+
+<!-- <script type="text/javascript" src="../js/script.js"></script> -->
+
+</html>

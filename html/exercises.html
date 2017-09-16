@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../js/jquery-3.2.1.js">
+
+    </script>
+</head>
+
+<body style="height: 300vh;">
+    <p id="result"></p>
+    <br>
+    <script></script>
+    <button id="back" type="button">BACK</button>
+
+    <button style="position: fixed; bottom: 25px; right: 25px" id="toTop" type="button" onclick="toTopPage(10);">^</button>
+
+    <script>
+        function toTopPage(offset) {
+            $('body').animate({ scrollTop: offset }, 2000);
+        }
+        $(document).ready(function () {
+            $("#back").click(function () {
+                window.history.back();
+            });
+        });
+
+        /*
+        Day Fibonacci:
+        1 1 2 3 5 8 13 21
+
+        Quay lui
+        Giai Sudoku
+        */
+
+        function fibonacci(num) {
+            if (num == 1 || num == 2) {
+                return 1;
+            }
+            return fibonacci(num - 1) + fibonacci(num - 2);
+        }
+
+        $('#result').html(fibonacci(8));
+    </script>
+</body>
+
+</html>

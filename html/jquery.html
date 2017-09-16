@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../js/jquery-3.2.1.js">
+
+    </script>
+</head>
+
+<body>
+    <!-- Hoán đổi giá trị trong input của fname và lname -->
+    <form name='demo_form'>
+        First name:
+        <input type="text" name="fname"><br> Last name:
+        <input type="text" name="lname"><br>
+        <input type="button" value="Submit" onclick="hideInput();">
+
+        <button type="button" id="btnHide">Hide</button>
+        <button type="button" id="btnShow">Show</button>
+    </form>
+
+    <script>
+        function hideInput() {
+            // $('form input[type="text"').hide();
+
+            var fname = $('form input[name="fname"]').val();
+            var lname = $('form input[name="lname"]').val();
+            $('form input[name="fname"]').val(lname);
+            $('form input[name="lname"]').val(fname);
+        }
+
+        $(document).ready(function () {
+            // $("#btnInsert").click(function() {
+            //     $("<input type='text' value='hello'>").insertAfter("input[type='button']");
+            // });
+
+            // $("#btnHide").bind('click', function() {
+            //     $("input[name='lname']").animate({height: '300px'}, 3000, function() {
+            //         alert("done");
+            //     });
+            // });
+
+            $("#btnShow").bind('click', function () {
+                console.log("start");
+                $.ajax({
+                    url: 'https://api.myjson.com/bins/lwgm5',
+                    method: "GET",
+                    data: {a: "B"},
+                    success: function(posts) {
+                        console.log(posts);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+                console.log("end");
+            });
+        });
+    </script>
+</body>
+
+</html>
